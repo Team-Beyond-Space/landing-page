@@ -9,12 +9,14 @@ module.exports = {
     extend: {
       colors: {
         cosmic: {
-          primary: '#00d4ff',
-          secondary: '#00a8cc',
-          accent: '#ff0080',
-          dark: '#0a0a0f',
-          darker: '#050508',
-          light: '#1a1a2e',
+          primary: '#0ea5e9',      // Darker blue (was #00d4ff)
+          secondary: '#0f766e',     // Darker teal (was #00a8cc)
+          accent: '#c2185b',        // Darker pink (was #ff0080)
+          dark: '#020617',          // Much darker (was #0a0a0f)
+          darker: '#010409',        // Even darker (was #050508)
+          light: '#0f172a',         // Darker light (was #1a1a2e)
+          slate: '#1e293b',         // New darker slate
+          charcoal: '#374151',      // New charcoal
         },
       },
       animation: {
@@ -33,12 +35,12 @@ module.exports = {
           '100%': { transform: 'rotate(360deg)' },
         },
         'pulse-glow': {
-          '0%': { boxShadow: '0 0 20px rgba(0, 212, 255, 0.5)' },
-          '100%': { boxShadow: '0 0 40px rgba(0, 212, 255, 0.8)' },
+          '0%': { boxShadow: '0 0 20px rgba(14, 165, 233, 0.4)' },  // Updated to match new primary
+          '100%': { boxShadow: '0 0 40px rgba(14, 165, 233, 0.7)' },
         },
         twinkle: {
-          '0%, 100%': { opacity: 0.3 },
-          '50%': { opacity: 1 },
+          '0%, 100%': { opacity: 0.2 },  // Darker opacity
+          '50%': { opacity: 0.8 },       // Less bright
         },
       },
     },

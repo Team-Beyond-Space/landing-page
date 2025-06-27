@@ -28,16 +28,16 @@ export default function StarField() {
     window.addEventListener('resize', resizeCanvas)
 
     const stars: Star[] = []
-    const numStars = 200
+    const numStars = 250  // More stars for darker theme
 
     // Initialize stars
     for (let i = 0; i < numStars; i++) {
       stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 2,
-        opacity: Math.random(),
-        speed: Math.random() * 0.5 + 0.1,
+        size: Math.random() * 1.5,  // Smaller, more subtle stars
+        opacity: Math.random() * 0.6 + 0.1,  // Dimmer stars
+        speed: Math.random() * 0.3 + 0.05,   // Slower movement
       })
     }
 
@@ -48,18 +48,18 @@ export default function StarField() {
         // Update star position
         star.y += star.speed
         if (star.y > canvas.height) {
-          star.y = 0
+          star.y = -5
           star.x = Math.random() * canvas.width
         }
 
         // Update opacity for twinkling effect
-        star.opacity += (Math.random() - 0.5) * 0.02
-        star.opacity = Math.max(0.1, Math.min(1, star.opacity))
+        star.opacity += (Math.random() - 0.5) * 0.01
+        star.opacity = Math.max(0.05, Math.min(0.6, star.opacity))
 
-        // Draw star
+        // Draw star with darker blue
         ctx.save()
         ctx.globalAlpha = star.opacity
-        ctx.fillStyle = '#00d4ff'
+        ctx.fillStyle = '#0ea5e9'  // Updated to match new primary color
         ctx.beginPath()
         ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2)
         ctx.fill()
@@ -80,7 +80,9 @@ export default function StarField() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ background: 'radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a0f 100%)' }}
+      style={{ 
+        background: 'radial-gradient(ellipse at center, #0f172a 0%, #020617 60%, #010409 100%)' 
+      }}
     />
   )
 }
