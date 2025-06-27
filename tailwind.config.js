@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'space': ['var(--font-space-grotesk)', 'Space Grotesk', 'sans-serif'],
+      },
       colors: {
         cosmic: {
           primary: '#0ea5e9',      // Darker blue (was #00d4ff)
@@ -35,12 +38,12 @@ module.exports = {
           '100%': { transform: 'rotate(360deg)' },
         },
         'pulse-glow': {
-          '0%': { boxShadow: '0 0 20px rgba(14, 165, 233, 0.4)' },  // Updated to match new primary
+          '0%': { boxShadow: '0 0 20px rgba(14, 165, 233, 0.4)' },
           '100%': { boxShadow: '0 0 40px rgba(14, 165, 233, 0.7)' },
         },
         twinkle: {
-          '0%, 100%': { opacity: 0.2 },  // Darker opacity
-          '50%': { opacity: 0.8 },       // Less bright
+          '0%, 100%': { opacity: 0.2 },
+          '50%': { opacity: 0.8 },
         },
       },
     },

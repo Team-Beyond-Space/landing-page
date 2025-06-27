@@ -10,7 +10,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 md:pt-0">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         {[...Array(20)].map((_, i) => (
@@ -35,19 +35,19 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-10 text-center max-w-6xl mx-auto px-4">
-        {/* Logo */}
+        {/* Logo with extra mobile spacing */}
         <motion.div
-          className="mb-8 flex justify-center"
+          className="mb-8 md:mb-8 mt-8 md:mt-0 flex justify-center"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          <AnimatedLogo size={150} />
+          <AnimatedLogo size={120} className="md:w-[150px] md:h-[150px]" />
         </motion.div>
 
         {/* Main heading */}
         <motion.h1
-          className="text-6xl md:text-8xl font-bold mb-12 bg-gradient-to-r from-cosmic-primary via-white to-cosmic-secondary bg-clip-text text-transparent"
+          className="text-5xl sm:text-6xl md:text-8xl font-space-bold mb-8 md:mb-12 bg-gradient-to-r from-cosmic-primary via-white to-cosmic-secondary bg-clip-text text-transparent tracking-tight px-2"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
@@ -57,7 +57,7 @@ export default function HeroSection() {
 
         {/* Slogan */}
         <motion.p
-          className="text-2xl md:text-3xl text-gray-300 mb-4 font-light"
+          className="text-xl sm:text-2xl md:text-3xl text-gray-300 mb-4 font-space-light tracking-wide px-2"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
@@ -67,7 +67,7 @@ export default function HeroSection() {
 
         {/* Description */}
         <motion.p
-          className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed"
+          className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-space-normal px-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
@@ -78,7 +78,7 @@ export default function HeroSection() {
 
         {/* CTA Buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
+          className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-12 md:mb-16 px-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.0 }}
@@ -87,21 +87,21 @@ export default function HeroSection() {
             href="https://github.com/Team-Beyond-Space"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-3 bg-gradient-to-r from-cosmic-primary to-cosmic-secondary px-8 py-4 rounded-full text-white font-semibold text-lg hover:shadow-2xl hover:shadow-cosmic-primary/50 transition-all duration-300"
+            className="flex items-center space-x-3 bg-gradient-to-r from-cosmic-primary to-cosmic-secondary px-6 md:px-8 py-3 md:py-4 rounded-full text-white font-space-semibold text-base md:text-lg hover:shadow-2xl hover:shadow-cosmic-primary/50 transition-all duration-300 w-full sm:w-auto max-w-xs"
             whileHover={{ scale: 1.05, y: -5 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Github size={24} />
+            <Github size={20} className="md:w-6 md:h-6" />
             <span>Explore Our GitHub</span>
           </motion.a>
 
           <motion.button
             onClick={() => document.querySelector('#join')?.scrollIntoView({ behavior: 'smooth' })}
-            className="flex items-center space-x-3 glass px-8 py-4 rounded-full text-cosmic-primary font-semibold text-lg border border-cosmic-primary/50 hover:bg-cosmic-primary/10 transition-all duration-300"
+            className="flex items-center space-x-3 glass px-6 md:px-8 py-3 md:py-4 rounded-full text-cosmic-primary font-space-semibold text-base md:text-lg border border-cosmic-primary/50 hover:bg-cosmic-primary/10 transition-all duration-300 w-full sm:w-auto max-w-xs"
             whileHover={{ scale: 1.05, y: -5 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Rocket size={24} />
+            <Rocket size={20} className="md:w-6 md:h-6" />
             <span>Join Our Mission</span>
           </motion.button>
         </motion.div>
@@ -115,7 +115,7 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 1.5 }}
           whileHover={{ scale: 1.1 }}
         >
-          <ArrowDown size={32} className="text-cosmic-primary mx-auto" />
+          <ArrowDown size={28} className="md:w-8 md:h-8 text-cosmic-primary mx-auto" />
         </motion.button>
       </div>
     </section>

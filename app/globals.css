@@ -17,7 +17,7 @@ body {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
 }
 
 a {
@@ -62,4 +62,25 @@ a {
 /* Dark gradient backgrounds */
 .cosmic-gradient-bg {
   background: radial-gradient(ellipse at center, #0f172a 0%, #020617 70%, #010409 100%);
+}
+
+/* Font weight utilities for Space Grotesk */
+.font-space-light {
+  font-weight: 300;
+}
+
+.font-space-normal {
+  font-weight: 400;
+}
+
+.font-space-medium {
+  font-weight: 500;
+}
+
+.font-space-semibold {
+  font-weight: 600;
+}
+
+.font-space-bold {
+  font-weight: 700;
 }
