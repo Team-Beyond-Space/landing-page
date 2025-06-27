@@ -33,14 +33,20 @@ export default function AnimatedLogo({ size = 120, className = '' }: AnimatedLog
       
       {/* Logo container with glow effect */}
       <motion.div
-        className="relative z-10 rounded-full bg-gradient-to-br from-cosmic-primary/20 to-cosmic-secondary/20 p-4 cosmic-glow"
+        className="relative z-10 rounded-full bg-gradient-to-br from-cosmic-primary/20 to-cosmic-secondary/20 p-2 cosmic-glow overflow-hidden"
         style={{ width: size, height: size }}
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 300, damping: 10 }}
       >
-        <div className="w-full h-full rounded-full bg-cosmic-dark flex items-center justify-center">
-          {/* Placeholder for logo - replace with actual logo image */}
-          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cosmic-primary to-cosmic-secondary opacity-80" />
+        {/* Actual Logo Image - Circular Crop */}
+        <div className="relative w-full h-full rounded-full overflow-hidden bg-cosmic-dark">
+          <Image
+            src="/images/logo.png"
+            alt="Team Beyond Space Logo"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
       </motion.div>
       

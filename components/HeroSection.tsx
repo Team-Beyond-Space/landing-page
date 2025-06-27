@@ -47,7 +47,7 @@ export default function HeroSection() {
 
         {/* Main heading */}
         <motion.h1
-          className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-cosmic-primary via-white to-cosmic-secondary bg-clip-text text-transparent"
+          className="text-6xl md:text-8xl font-bold mb-12 bg-gradient-to-r from-cosmic-primary via-white to-cosmic-secondary bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}

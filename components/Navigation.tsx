@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Github, Star } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -46,9 +47,22 @@ export default function Navigation() {
             className="flex items-center space-x-3"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cosmic-primary to-cosmic-secondary flex items-center justify-center">
-              <div className="w-6 h-6 rounded-full bg-cosmic-dark" />
-            </div>
+            <motion.div 
+              className="relative w-10 h-10 rounded-full bg-gradient-to-br from-cosmic-primary/20 to-cosmic-secondary/20 p-1 cosmic-glow"
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 1 }}
+            >
+              <div className="w-full h-full rounded-full overflow-hidden bg-cosmic-dark flex items-center justify-center">
+                <Image
+                  src="/images/logo.png"
+                  alt="Team Beyond Space Logo"
+                  width={32}
+                  height={32}
+                  className="object-contain filter drop-shadow-sm"
+                  priority
+                />
+              </div>
+            </motion.div>
             <span className="text-xl font-bold bg-gradient-to-r from-cosmic-primary to-cosmic-secondary bg-clip-text text-transparent">
               Team Beyond Space
             </span>
